@@ -9,8 +9,9 @@ body {
     font-weight: 800;
     font-size: 30px;
     margin: 10px;
-    padding: 5px;
+    padding: 10px;
     transition-duration: 0.2s;
+    border-radius: 5px;
 }
 
 .title-highlight:hover {
@@ -28,6 +29,11 @@ a {
     margin: 10 px;
     font-size: 15px;
     display: block;
+    text-decoration: none;
+}
+
+a::before {
+    content: "> "
 }
 
 a:hover {
