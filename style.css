@@ -21,7 +21,7 @@ body {
     margin: 20px;
 }
 
-li {
+a {
     list-style: "> "; 
     font-family: 'Roboto Slab', serif;
     color: #ffffff;
@@ -29,6 +29,6 @@ li {
     font-size: 15px;
 }
 
-li:hover {
+a:hover {
     color: #2541B2;
 }
