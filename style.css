@@ -27,6 +27,7 @@ a {
     color: #ffffff;
     margin: 10 px;
     font-size: 15px;
+    display: block;
 }
 
 a:hover {
