@@ -23,22 +23,8 @@
 
         const fileList = document.getElementById('fileList');
         files.forEach((file) => {
-          const listItem = document.createElement('li');
-          
-          // Create an anchor tag
-          const link = document.createElement('a');
-          link.textContent = file;
-          
-          // Set the href attribute to the GitHub URL of the file
-          link.href = `https://smallgatekea.github.io/fajlok/${file}`;
-          
-          // Open the link in a new tab
-          link.target = "_blank";
-          
-          // Append the link to the list item
-          listItem.appendChild(link);
-          
-          // Append the list item to the file list
+          const listItem = document.createElement('a');
+          listItem.textContent = file;
           fileList.appendChild(listItem);
         });
       } catch (error) {
