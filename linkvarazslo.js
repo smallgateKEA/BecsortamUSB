@@ -21,7 +21,7 @@ fetch(apiUrl, {
       if (Array.isArray(data)) {
         // Process the data as needed (e.g., extract file names)
         const fileNames = data.map(file => file.name);
-        
+        console.log('File Names:', fileNames);
         // Append the file names to the HTML element with id 'fileList'
         const fileListElement = document.getElementById('fileList');
         fileNames.forEach(fileName => {
