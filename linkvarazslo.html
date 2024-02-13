@@ -9,26 +9,46 @@
   <h2>Downloads</h2>
   <ul id="downloadLinks"></ul>
 
-  <script>
-    // Replace 'YOUR_GITHUB_USERNAME', 'YOUR_REPO_NAME', and 'YOUR_BRANCH' with your GitHub username, repository name, and branch.
-    const username = 'smallgateKEA';
-    const repo = 'BecsortamUSB';
-    const branch = 'main';
+  <script type="module">
+    import { Octokit } from 'https://cdn.skypack.dev/@octokit/core';
 
-    // Fetch file list from GitHub API
-    fetch(`https://api.github.com/repos/${username}/${repo}/contents/downloads?ref=${branch}`)
-      .then(response => response.json())
-      .then(data => {
-        const downloadLinks = document.getElementById('downloadLinks');
-        data.forEach(file => {
-          if (file.type === 'file') {
-            const listItem = document.createElement('li');
-            listItem.innerHTML = `<a href="${file.download_url}" download>${file.name}</a>`;
-            downloadLinks.appendChild(listItem);
-          }
+    // Replace 'YOUR_TOKEN', 'OWNER', 'REPO', 'BRANCH', and 'PATH' with your GitHub access token, repository details, and path.
+    const token = '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';
+    const owner = 'smallgateKEA';
+    const repo = 'fajlok';
+    const branch = 'main';
+    const path = '/';
+
+    const octokit = new Octokit({
+      auth: token,
+      userAgent: 'adatlopas', // Replace with your app name or identifier
+    });
+
+    async function fetchFiles() {
+      try {
+        const response = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
+          owner,
+          repo,
+          path,
+          ref: branch,
+          headers: {
+            'Accept': 'application/vnd.github.v3.raw',
+            'X-GitHub-Api-Version': '2022-11-28',
+          },
         });
-      })
-      .catch(error => console.error('Error fetching file list:', error));
+
+        const downloadLinks = document.getElementById('downloadLinks');
+        response.data.forEach(file => {
+          const listItem = document.createElement('li');
+          listItem.innerHTML = `<a href="${file.download_url}" download>${file.name}</a>`;
+          downloadLinks.appendChild(listItem);
+        });
+      } catch (error) {
+        console.error('Error fetching file list:', error);
+      }
+    }
+
+    fetchFiles();
   </script>
 </body>
 </html>
