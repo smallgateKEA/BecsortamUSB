@@ -23,9 +23,8 @@
 
         const fileList = document.getElementById('fileList');
         files.forEach((file) => {
-          const listItem = document.createElement('a');
+          const listItem = document.createElement('li');
           listItem.textContent = file;
-          listItem.href = 'https://smallgatekea.github.io/fajlok/' + file;
           fileList.appendChild(listItem);
         });
       } catch (error) {
