@@ -17,7 +17,7 @@ body {
     color: #ffffff;
 }
 
-.files {
+#fileList {
     margin: 20px;
 }
 
