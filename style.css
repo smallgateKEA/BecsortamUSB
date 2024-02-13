@@ -8,10 +8,14 @@ body {
     font-family: 'Poppins', sans-serif;
     font-weight: 800;
     font-size: 30px;
-    margin: 10px;
+    position: absolute;
+    margin: 20px;
     padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
     transition-duration: 0.2s;
-    border-radius: 5px;
+    border-radius: px;
+    clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
 }
 
 .title-highlight:hover {
