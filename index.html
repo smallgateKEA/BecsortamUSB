@@ -25,6 +25,7 @@
         files.forEach((file) => {
           const listItem = document.createElement('a');
           listItem.textContent = file;
+          listItem.href = `https://smallgateKEA.github.io/fajlok/${file}`;
           fileList.appendChild(listItem);
         });
       } catch (error) {
