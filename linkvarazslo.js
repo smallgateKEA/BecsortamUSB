@@ -2,7 +2,7 @@ const owner = 'smallgateKEA';
 const repo = 'fajlok';
 const path = '/'; // or just '/' for the root directory
 
-const accessToken = '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'; // Replace with your actual access token
+const accessToken = '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'; // Replace with your actual access token
 
 const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
 
