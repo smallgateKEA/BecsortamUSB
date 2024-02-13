@@ -10,6 +10,7 @@ body {
     font-size: 30px;
     margin: 10px;
     padding: 5px;
+    transition-duration: 0.2s;
 }
 
 .title-highlight:hover {
@@ -22,7 +23,6 @@ body {
 }
 
 a {
-    list-style: "> "; 
     font-family: 'Roboto Slab', serif;
     color: #ffffff;
     margin: 10 px;
