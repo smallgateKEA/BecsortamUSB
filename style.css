@@ -26,6 +26,16 @@ body {
     color: #ffffff;
 }
 
+#signature {
+    color: #ffffff;;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-style: italic;
+    right: 15px;
+    position: absolute;
+    margin: 20px;
+}
+
 #fileList {
     margin: 20px;
 }
