@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Website</title>
+</head>
+<body>
+  <h2>Downloads</h2>
+  <ul id="downloadLinks"></ul>
+
+  <script>
+    // Replace 'YOUR_GITHUB_USERNAME', 'YOUR_REPO_NAME', and 'YOUR_BRANCH' with your GitHub username, repository name, and branch.
+    const username = 'smallgateKEA';
+    const repo = 'BecsortamUSB';
+    const branch = 'main';
+
+    // Fetch file list from GitHub API
+    fetch(`https://api.github.com/repos/${username}/${repo}/contents/downloads?ref=${branch}`)
+      .then(response => response.json())
+      .then(data => {
+        const downloadLinks = document.getElementById('downloadLinks');
+        data.forEach(file => {
+          if (file.type === 'file') {
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `<a href="${file.download_url}" download>${file.name}</a>`;
+            downloadLinks.appendChild(listItem);
+          }
+        });
+      })
+      .catch(error => console.error('Error fetching file list:', error));
+  </script>
+</body>
+</html>
