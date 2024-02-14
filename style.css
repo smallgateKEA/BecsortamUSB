@@ -27,7 +27,7 @@ body {
 }
 
 #signature {
-    color: #ffffff;;
+    color: #000000;;
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
     font-style: italic;
@@ -35,6 +35,11 @@ body {
     bottom: 15px;
     position: absolute;
     margin: 20px;
+    background-color: #CC6E0F;
+    padding: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
 }
 
 #fileList {
