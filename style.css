@@ -32,6 +32,7 @@ body {
     font-size: 15px;
     font-style: italic;
     right: 15px;
+    bottom: 15px;
     position: absolute;
     margin: 20px;
 }
